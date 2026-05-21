@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna Women Spa - منتجع نسائي فاخر</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #2d3436;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #2d3436;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(244, 114, 182, 0.3);
+            animation: slideInRight 0.6s ease-out;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(244, 114, 182, 0.5);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(244, 114, 182, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+            padding: 60px 20px;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663055403178/E48iG9RHq5tNUPvSrmnDn3/hero-spa-B2dEqgN2VS47mmjsbNxnHV.webp');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            color: #2d3436;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #636e72;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+            color: #2d3436;
+            animation: fadeInUp 0.8s ease-out;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
+        .service-card:nth-child(5) { animation-delay: 0.5s; }
+        .service-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(244, 114, 182, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: 0;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(244, 114, 182, 0.25);
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #f472b6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card p {
+            color: #636e72;
+            font-size: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Packages Section */
+        .packages {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .package-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            padding: 50px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .package-card:nth-child(1) { animation-delay: 0.1s; }
+        .package-card:nth-child(2) { animation-delay: 0.2s; }
+        .package-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .package-card.featured {
+            border-color: #f472b6;
+            transform: scale(1.08);
+            box-shadow: 0 25px 60px rgba(244, 114, 182, 0.3);
+        }
+
+        .package-card:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+        }
+
+        .package-card.featured:hover {
+            transform: scale(1.08) translateY(-10px);
+        }
+
+        .package-card h3 {
+            font-size: 26px;
+            margin-bottom: 15px;
+            color: #2d3436;
+        }
+
+        .price {
+            font-size: 42px;
+            color: #f472b6;
+            font-weight: 700;
+            margin: 25px 0;
+            animation: pulse 2s infinite;
+        }
+
+        .package-card ul {
+            list-style: none;
+            text-align: right;
+            margin: 25px 0;
+        }
+
+        .package-card li {
+            padding: 10px 0;
+            color: #636e72;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 14px;
+        }
+
+        .package-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+            cursor: pointer;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(244, 114, 182, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s;
+            color: white;
+            font-size: 24px;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, rgba(244, 114, 182, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+
+        .stars {
+            color: #f472b6;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .testimonial-text {
+            color: #636e72;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #2d3436;
+        }
+
+        /* Booking Section */
+        .booking {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #2d3436;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #f472b6;
+            box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.1);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, rgba(244, 114, 182, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .contact-card:nth-child(1) { animation-delay: 0.1s; }
+        .contact-card:nth-child(2) { animation-delay: 0.2s; }
+        .contact-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(244, 114, 182, 0.2);
+        }
+
+        .contact-card h3 {
+            color: #f472b6;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .contact-card p {
+            color: #636e72;
+            font-size: 15px;
+        }
+
+        .contact-card a {
+            color: #f472b6;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(244, 114, 182, 0.4);
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 40;
+            text-decoration: none;
+            color: white;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 12px 35px rgba(244, 114, 182, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .package-card.featured {
+                transform: scale(1);
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .form-container {
+                padding: 30px 20px;
+            }
+
+            .whatsapp-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 28px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">✨ Luna</div>
+                <nav>
+                    <a href="#services">الخدمات</a>
+                    <a href="#packages">الباقات</a>
+                    <a href="#gallery">المعرض</a>
+                    <a href="#contact">التواصل</a>
+                </nav>
+                <a href="#booking" class="btn">احجزي الآن</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>لحظات من الراحة تنجيها</h1>
+            <p>تجربة SPA نسائية فاخرة مع خدمات تدليك واسترخاء احترافية في أجواء مصممة لراحتك الكاملة</p>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn">احجزي جلستك الآن</a>
+                <a href="https://wa.me/212708818882" class="btn" style="background: white; color: #f472b6; border: 2px solid #f472b6;">تواصلي عبر واتساب</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا المميزة</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>💆 تدليك استرخائي</h3>
+                    <p>تدليك احترافي يخفف التوتر والإرهاق من جسدك بأكمله بتقنيات عالمية</p>
+                </div>
+                <div class="service-card">
+                    <h3>🧖 حمام مغربي</h3>
+                    <p>تجربة تقليدية فاخرة تنظف وتنعم البشرة بشكل طبيعي وآمن</p>
+                </div>
+                <div class="service-card">
+                    <h3>💅 عناية الوجه</h3>
+                    <p>علاجات متقدمة لتجديد شباب البشرة وإشراقتها باستخدام منتجات فاخرة</p>
+                </div>
+                <div class="service-card">
+                    <h3>💄 مانيكير وباديكير</h3>
+                    <p>خدمات تجميل احترافية للأيدي والأقدام بأحدث التقنيات</p>
+                </div>
+                <div class="service-card">
+                    <h3>🌿 علاج بالزيوت</h3>
+                    <p>زيوت عطرية طبيعية لاسترخاء عميق وشامل وتجديد الطاقة</p>
+                </div>
+                <div class="service-card">
+                    <h3>💇 Hair Spa</h3>
+                    <p>علاج متخصص لتغذية وتقوية الشعر واستعادة حيويته</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages" id="packages">
+        <div class="container">
+            <h2 class="section-title">باقاتنا الفاخرة</h2>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <h3>Relax Package</h3>
+                    <p>تجربة استرخاء أساسية</p>
+                    <div class="price">450 د.م</div>
+                    <p style="color: #636e72; font-size: 14px;">90 دقيقة</p>
+                    <ul>
+                        <li>✓ تدليك استرخائي</li>
+                        <li>✓ حمام بخار</li>
+                        <li>✓ مشروب عطري</li>
+                    </ul>
+                    <a href="#booking" class="btn">احجزي الآن</a>
+                </div>
+                <div class="package-card featured">
+                    <h3>✨ Beauty Package</h3>
+                    <p>تجربة جمال شاملة</p>
+                    <div class="price">810 د.م</div>
+                    <p style="color: #636e72; font-size: 14px;">150 دقيقة</p>
+                    <ul>
+                        <li>✓ تدليك كامل الجسم</li>
+                        <li>✓ عناية الوجه الفاخرة</li>
+                        <li>✓ مانيكير وباديكير</li>
+                        <li>✓ حمام مغربي</li>
+                        <li>✓ مشروب عطري</li>
+                    </ul>
+                    <a href="#booking" class="btn">احجزي الآن</a>
+                </div>
+                <div class="package-card">
+                    <h3>Royal Spa Experience</h3>
+                    <p>التجربة الملكية الكاملة</p>
+                    <div class="price">1350 د.م</div>
+                    <p style="color: #636e72; font-size: 14px;">240 دقيقة</p>
+                    <ul>
+                        <li>✓ تدليك استرخائي متقدم</li>
+                        <li>✓ حمام مغربي فاخر</li>
+                        <li>✓ عناية الوجه المتقدمة</li>
+                        <li>✓ علاج بالزيوت العطرية</li>
+                        <li>✓ مانيكير وباديكير</li>
+                        <li>✓ Hair Spa</li>
+                        <li>✓ وجبة خفيفة فاخرة</li>
+                    </ul>
+                    <a href="#booking" class="btn">احجزي الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">معرض صورنا</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663055403178/E48iG9RHq5tNUPvSrmnDn3/massage-service-aEcufKzKPEgxuYWRC9S5VG.webp" alt="خدمة التدليك">
+                    <div class="gallery-overlay">تدليك احترافي</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663055403178/E48iG9RHq5tNUPvSrmnDn3/facial-treatment-CfKCd7MKgDDXT3ipnP3PY4.webp" alt="عناية الوجه">
+                    <div class="gallery-overlay">عناية الوجه</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663055403178/E48iG9RHq5tNUPvSrmnDn3/hammam-spa-WFd5K9vQwfUZTRHjWAaVSK.webp" alt="حمام مغربي">
+                    <div class="gallery-overlay">حمام مغربي</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663055403178/E48iG9RHq5tNUPvSrmnDn3/spa-products-F5oHkvfq4tqcENCt5ydrhA.webp" alt="منتجات فاخرة">
+                    <div class="gallery-overlay">منتجات فاخرة</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">آراء عميلاتنا</h2>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"تجربة رائعة جداً! المنتجع نظيف وهادئ والموظفات احترافيات جداً. سأعود بكل تأكيد."</p>
+                <p class="testimonial-author">فاطمة محمد</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"أفضل SPA زرته! الخدمة ممتازة والأسعار معقولة جداً. كل شيء فاخر وراقي."</p>
+                <p class="testimonial-author">نور السعيد</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <h2 class="section-title">احجزي جلستك الآن</h2>
+            <div class="form-container">
+                <form onsubmit="handleBooking(event)">
+                    <div class="form-group">
+                        <label>الاسم الكامل</label>
+                        <input type="text" required placeholder="أدخلي اسمك">
+                    </div>
+                    <div class="form-group">
+                        <label>رقم الهاتف</label>
+                        <input type="tel" required placeholder="أدخلي رقم هاتفك">
+                    </div>
+                    <div class="form-group">
+                        <label>نوع الخدمة</label>
+                        <select required>
+                            <option value="">اختاري الخدمة</option>
+                            <option value="تدليك استرخائي">تدليك استرخائي</option>
+                            <option value="حمام مغربي">حمام مغربي</option>
+                            <option value="عناية الوجه">عناية الوجه</option>
+                            <option value="مانيكير وباديكير">مانيكير وباديكير</option>
+                            <option value="علاج بالزيوت">علاج بالزيوت</option>
+                            <option value="Hair Spa">Hair Spa</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>التاريخ المفضل</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>الوقت المفضل</label>
+                        <input type="time" required>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">تأكيد الحجز</button>
+                </form>
+                <p style="text-align: center; margin-top: 20px; color: #636e72; font-size: 13px;">
+                    سيتم إرسال تفاصيل الحجز إلى echchiaa@elbordiji.com وواتساب +212 708 818 882
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">تواصلي معنا</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>📍 الموقع</h3>
+                    <p>الرياض، حي الملز<br>في قلب مدينة الرياض</p>
+                </div>
+                <div class="contact-card">
+                    <h3>📞 الهاتف</h3>
+                    <p><a href="https://wa.me/212708818882">+212 708 818 882</a><br>متاح 24/7</p>
+                </div>
+                <div class="contact-card">
+                    <h3>📧 البريد الإلكتروني</h3>
+                    <p><a href="mailto:echchiaa@elbordiji.com">echchiaa@elbordiji.com</a><br>نرد في أقرب وقت</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Luna Women Spa. جميع الحقوق محفوظة.</p>
+            <p>البريد الإلكتروني: echchiaa@elbordiji.com | الهاتف: +212 708 818 882</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/212708818882?text=مرحباً، أود الاستفسار عن خدمات Luna Women Spa" class="whatsapp-btn" title="تواصلي عبر واتساب">💬</a>
+
+    <script>
+        function handleBooking(event) {
+            event.preventDefault();
+            const form = event.target;
+            const name = form.elements[0].value;
+            const phone = form.elements[1].value;
+            const service = form.elements[2].value;
+            const date = form.elements[3].value;
+            const time = form.elements[4].value;
+
+            const message = `طلب حجز جديد:\nالاسم: ${name}\nالهاتف: ${phone}\nالخدمة: ${service}\nالتاريخ: ${date}\nالوقت: ${time}`;
+            const whatsappUrl = `https://wa.me/212708818882?text=${encodeURIComponent(message)}`;
+            
+            window.open(whatsappUrl, '_blank');
+            alert('تم إرسال طلب الحجز! سيتم التواصل معك قريباً.');
+            form.reset();
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
